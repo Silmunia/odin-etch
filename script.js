@@ -12,7 +12,14 @@ function loadBoard(gridCount, boardSize) {
         newSquare.style['background-color'] = 'white';
     
         newSquare.addEventListener('mouseenter', (event) => {
-            event.target.style['background-color'] = 'black';
+
+            const redValue = Math.floor(Math.random() * 256);
+            const greenValue = Math.floor(Math.random() * 256);
+            const blueValue = Math.floor(Math.random() * 256);
+
+            event.target.style['background-color'] = `rgb(
+                ${redValue}, ${greenValue}, ${blueValue}
+            )`;
         });
     
         container.appendChild(newSquare);
